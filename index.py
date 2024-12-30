@@ -29,7 +29,7 @@ with open('./in.txt', 'r') as source, open('./README.md', 'w') as destination:
             subprocess.run(['git', 'commit', '-m', commit_message], cwd=repo_path, check=True)
 
             # Push the changes
-            subprocess.run(['git', 'push'], cwd=repo_path, check=True)
+            subprocess.run(['git', 'push', '-u','origin','master'], cwd=repo_path, check=True)
 
             print(f"Processed and pushed: {line.strip().split(' ')[0]}")
         except subprocess.CalledProcessError as e:

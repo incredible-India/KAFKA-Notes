@@ -1,15 +1,15 @@
 import subprocess
 import os
-
+import random
 # Ensure the current working directory is set to the cloned repository
 repo_path = r"C:\Users\himanshu.y.sharma\\Desktop\\Git pusher\\KAFKA-Notes"
 
 # Open the source file in read mode and the destination file in append mode
-with open('./in.txt', 'r') as source, open('./README.md', 'a') as destination:
+with open('./in.txt', 'r') as source, open('./README.md', 'w') as destination:
     # Loop through each line in the source file
     for line in source:
         # Write the line to the destination file
-        destination.write(line)
+        destination.write(line + str(random.randint(1,80)))
 
         try:
             # Stage the changes

@@ -22,7 +22,7 @@ with open('./in.txt', 'r') as source, open('./README.md', 'a') as destination:
 
             if not result.stdout.strip():
                 print(f"No changes to commit for line: {line.strip()}")
-                continue
+                #continue
 
             # Commit the changes with the line content as the commit message
             commit_message = f"Added line: {line.strip()[:50]}"  # Truncate message to 50 characters

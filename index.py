@@ -9,10 +9,11 @@ with open('./in.txt', 'r') as source, open('./README.md', 'a') as destination:
     for line in source:
         # Write the line to the destination file
         destination.write(line)
+        subprocess.run(['git', 'add', '.'], cwd=repo_path, check=True)
 
         try:
             # Stage the changes
-            subprocess.run(['git', 'add', '.'], cwd=repo_path, check=True)
+            
 
             # Commit the changes with the line content as the commit message
             commit_message = f"Added line: {line.strip()}"

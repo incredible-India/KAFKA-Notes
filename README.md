@@ -1,1 +1,2 @@
 Kafka Notes
+Topics partions 
